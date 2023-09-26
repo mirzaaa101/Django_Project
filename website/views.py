@@ -43,6 +43,7 @@ def register_user(request):
            return redirect('views.home')
        else:
             form = SignUpForm()
+            messages.error(request, "Error, please properly fillup all the field!")
             return render(request, 'website/register_user.html', {'form':form})
 
    form = SignUpForm(request.POST)
